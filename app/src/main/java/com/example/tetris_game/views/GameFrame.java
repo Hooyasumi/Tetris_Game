@@ -87,7 +87,7 @@ public class GameFrame extends View {
                         right = left + mBoxSize;
                         top = mBoxSize * point.y;
                         bottom = top + mBoxSize;
-                        mPaint.setColor(Color.BLACK);
+                        mPaint.setColor(Color.GRAY);
                         break;
                 }
                 canvas.drawRect(left, top, right, bottom, mPaint);

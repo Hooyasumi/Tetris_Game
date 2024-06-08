@@ -8,13 +8,13 @@ import com.example.tetris_game.presenter.GameStatus;
 import com.example.tetris_game.presenter.GameView;
 import com.example.tetris_game.presenter.Point;
 
-class GameViewImpl implements GameView {
+public class GameViewImpl implements GameView {
     private final GameFrame mGameFrame;
     private final TextView mGameScoreText;
     private final TextView mGameStatusText;
     private final Button mGameCtlBtn;
 
-    GameViewImpl(GameFrame gameFrame, TextView gameScoreText, TextView gameStatusText, Button gameCtlBtn) {
+    public GameViewImpl(GameFrame gameFrame, TextView gameScoreText, TextView gameStatusText, Button gameCtlBtn) {
         mGameFrame = gameFrame;
         mGameScoreText = gameScoreText;
         mGameStatusText = gameStatusText;

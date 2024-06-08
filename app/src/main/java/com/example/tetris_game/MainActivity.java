@@ -6,12 +6,11 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.tetris_game.models.GameModelFactory;
-import com.example.tetris_game.models.GameType;
 import com.example.tetris_game.presenter.GamePresenter;
 import com.example.tetris_game.presenter.GameTurn;
 import com.example.tetris_game.views.GameFrame;
-import com.example.tetris_game.views.GameViewFactory;
+import com.example.tetris_game.models.TetrisGameModel;
+import com.example.tetris_game.views.GameViewImpl;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
@@ -27,8 +26,10 @@ public class MainActivity extends AppCompatActivity {
         Button gameCtlBtn = findViewById(R.id.game_ctl_btn);
 
         GamePresenter gamePresenter = new GamePresenter();
-        gamePresenter.setGameModel(GameModelFactory.newGameModel(GameType.TETRIS));
-        gamePresenter.setGameView(GameViewFactory.newGameView(gameFrame, gameScoreText, gameStatusText, gameCtlBtn));
+        TetrisGameModel tetrisGameModel = new TetrisGameModel();
+        gamePresenter.setGameModel(tetrisGameModel);
+        GameViewImpl gameViewImpl = new GameViewImpl(gameFrame, gameScoreText, gameStatusText, gameCtlBtn);
+        gamePresenter.setGameView(gameViewImpl);
 
         Button upBtn = findViewById(R.id.up_btn);
         Button downBtn = findViewById(R.id.down_btn);
