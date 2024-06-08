@@ -52,7 +52,7 @@ public class GameFrame extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        mPaint.setColor(Color.GRAY);
+        mPaint.setColor(Color.BLACK);
         canvas.drawRect(0, 0, mGameSize, mGameSize, mPaint);
         if (mPoints == null) {
             return;
@@ -87,7 +87,7 @@ public class GameFrame extends View {
                         right = left + mBoxSize;
                         top = mBoxSize * point.y;
                         bottom = top + mBoxSize;
-                        mPaint.setColor(Color.GRAY);
+                        mPaint.setColor(Color.DKGRAY);
                         break;
                 }
                 canvas.drawRect(left, top, right, bottom, mPaint);

@@ -35,13 +35,13 @@ public class MainActivity extends AppCompatActivity {
         Button downBtn = findViewById(R.id.down_btn);
         Button leftBtn = findViewById(R.id.left_btn);
         Button rightBtn = findViewById(R.id.right_btn);
-        Button fireBtn = findViewById(R.id.fire_btn);
+        Button rotateBtn = findViewById(R.id.rotate_btn);
 
         upBtn.setOnClickListener(v -> gamePresenter.turn(GameTurn.UP));
         downBtn.setOnClickListener(v -> gamePresenter.turn(GameTurn.DOWN));
         leftBtn.setOnClickListener(v -> gamePresenter.turn(GameTurn.LEFT));
         rightBtn.setOnClickListener(v -> gamePresenter.turn(GameTurn.RIGHT));
-        fireBtn.setOnClickListener(v -> gamePresenter.turn(GameTurn.ROTATE));
+        rotateBtn.setOnClickListener(v -> gamePresenter.turn(GameTurn.ROTATE));
 
         gameCtlBtn.setOnClickListener(v -> gamePresenter.changeStatus());
 
